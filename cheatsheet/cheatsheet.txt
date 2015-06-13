@@ -1,0 +1,15 @@
+rails new todos
+
+cd todos
+
+rails g scaffold todo name:string due_on:date completed:boolean
+
+rake db:migrate
+
+http://localhost:3000/
+
+http://localhost:3000/todos
+
+
+//////step by steps
+http://pragmaticstudio.com/blog/2010/9/23/install-rails-ruby-mac

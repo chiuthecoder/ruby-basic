@@ -1,0 +1,6 @@
+a = ["Matz", "Guido", "Chiu"]
+b = [2, 3, 4]
+c = ["Dojo", 9]
+x = a + b
+
+puts x

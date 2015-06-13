@@ -1,0 +1,139 @@
+Last login: Thu Jun  4 13:40:50 on ttys000
+Chiuhuas-MBP:collections-fixnum chiu$ irb
+2.2.1 :001 > def my_each
+2.2.1 :002?>   puts self
+2.2.1 :003?>   end
+ => :my_each 
+2.2.1 :004 > arr = [1,2,3]
+ => [1, 2, 3] 
+2.2.1 :005 > arr.my_each
+NoMethodError: private method `my_each' called for [1, 2, 3]:Array
+	from (irb):5
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :006 > public def my_each
+2.2.1 :007?>   puts self
+2.2.1 :008?>   end
+ => Object 
+2.2.1 :009 > arr.my_each
+1
+2
+3
+ => nil 
+2.2.1 :010 > 1.my_each
+1
+ => nil 
+2.2.1 :011 > "blue".my_each
+blue
+ => nil 
+2.2.1 :012 > public def say_it
+2.2.1 :013?>   puts self
+2.2.1 :014?>   end
+ => Object 
+2.2.1 :015 > "green".say_it
+green
+ => nil 
+2.2.1 :016 > 
+  [Restored]
+Last login: Fri Jun  5 07:53:20 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+  [Restored]
+Last login: Sat Jun  6 10:17:21 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+  [Restored]
+Last login: Sat Jun  6 18:12:27 on console
+Chiuhuas-MacBook-Pro:collections-fixnum chiu$ 
+  [Restored]
+Last login: Mon Jun  8 07:52:23 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+
+
+/////////
+Last login: Thu Jun  4 12:08:54 on ttys000
+Chiuhuas-MBP:collections-fixnum chiu$ irb
+2.2.1 :001 > arr = [12, 24, 8, 9]
+ => [12, 24, 8, 9] 
+2.2.1 :002 > arr.each
+ => #<Enumerator: [12, 24, 8, 9]:each> 
+2.2.1 :003 > (0..9).each
+ => #<Enumerator: 0..9:each> 
+2.2.1 :004 > myArr = ['Apple', 'Orange']
+ => ["Apple", "Orange"] 
+2.2.1 :005 > myArr.each {|arr| puts arr}
+Apple
+Orange
+ => ["Apple", "Orange"] 
+2.2.1 :006 > myNum = [2, 3, 4]
+ => [2, 3, 4] 
+2.2.1 :007 > myNum.each {|newNum| yield {newNum += 10}}
+SyntaxError: (irb):7: syntax error, unexpected '{'
+myNum.each {|newNum| yield {newNum += 10}}
+                            ^
+(irb):7: syntax error, unexpected '}', expecting end-of-input
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :008 > arr = [12, 24, 8, 9]
+ => [12, 24, 8, 9] 
+2.2.1 :009 > output = []
+ => [] 
+2.2.1 :010 > arr.each { |x| output << x + 20 }
+ => [12, 24, 8, 9] 
+2.2.1 :011 > 
+  [Restored]
+Last login: Fri Jun  5 07:53:20 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+  [Restored]
+Last login: Sat Jun  6 10:17:21 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+  [Restored]
+Last login: Sat Jun  6 18:12:27 on console
+Chiuhuas-MacBook-Pro:collections-fixnum chiu$ 
+  [Restored]
+Last login: Mon Jun  8 07:52:23 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+
+
+//////////
+Last login: Thu Jun  4 13:48:26 on ttys002
+Chiuhuas-MBP:collections-fixnum chiu$ irub
+-bash: irub: command not found
+Chiuhuas-MBP:collections-fixnum chiu$ irb
+2.2.1 :001 > a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+2.2.1 :002 > a.select {|num| num.even? }
+ => [2, 4, 6, 8, 10] 
+2.2.1 :003 > a.select {|num| num.even }
+NoMethodError: undefined method `even' for 1:Fixnum
+	from (irb):3:in `block in irb_binding'
+	from (irb):3:in `select'
+	from (irb):3
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :004 > a.select {|num| num.even }
+NoMethodError: undefined method `even' for 1:Fixnum
+	from (irb):4:in `block in irb_binding'
+	from (irb):4:in `select'
+	from (irb):4
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :005 > a.select {|num| num.even? }
+ => [2, 4, 6, 8, 10] 
+2.2.1 :006 > a.select {|num| 7? }
+SyntaxError: (irb):6: syntax error, unexpected '}'
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :007 > a.select {|num| num=7? }
+SyntaxError: (irb):7: syntax error, unexpected '}'
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :008 > a.select {|num| num=7? }
+SyntaxError: (irb):8: syntax error, unexpected '}'
+	from /Users/chiu/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'
+2.2.1 :009 > 
+  [Restored]
+Last login: Fri Jun  5 07:53:20 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+  [Restored]
+Last login: Sat Jun  6 10:17:21 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+  [Restored]
+Last login: Sat Jun  6 18:12:27 on console
+  [Restored]hiuhuas-MacBook-Pro:collections-fixnum chiu$ 
+Last login: Mon Jun  8 07:52:23 on console
+Chiuhuas-MBP:collections-fixnum chiu$ 
+
+

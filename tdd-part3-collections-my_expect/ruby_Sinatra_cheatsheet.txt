@@ -1,0 +1,6 @@
+to Sinatra in Ruby
+
+need to install
+gem install sinatra
+gem install activerecord
+gem install sinatra-activerecord
